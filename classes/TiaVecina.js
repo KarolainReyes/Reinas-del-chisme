@@ -26,7 +26,4 @@ class TiaVecina extends Chismosa {
 
 }
 
-const e1 = new TiaVecina("felipa", 0, 0);
-console.log(e1.nombre, e1.nivelChisme, e1.reputacion);
-e1.contarChisme();
-console.log(e1.nombre, e1.nivelChisme, e1.reputacion);
+module.exports = TiaVecina;

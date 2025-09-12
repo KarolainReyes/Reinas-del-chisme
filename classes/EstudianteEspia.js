@@ -26,7 +26,4 @@ class EstudianteEspia extends Chismosa {
 }
 
 
-const e1 = new EstudianteEspia("felipa",1,1);
-console.log(e1.nombre,e1.nivelChisme,e1.reputacion);
-e1.contarChisme();
-console.log(e1.nombre,e1.nivelChisme,e1.reputacion);
+module.exports = EstudianteEspia;
