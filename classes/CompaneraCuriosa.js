@@ -1,5 +1,5 @@
 const Chismosa = require('./Chismosa');
-const numeroAleatorio = require('./functions');
+const {numeroAleatorio} = require('./functions');
 
 class CompaneraCuriosa extends Chismosa {
     constructor(nombre, reputacion,nivelChisme){

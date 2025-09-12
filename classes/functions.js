@@ -41,4 +41,13 @@ function mostrarTipos(){
     console.log("-----------------------------------------------------------------------");
 }
 
-module.exports = {numeroAleatorio,preguntar,mostrarMenu,mostrarTipos}
+function clear() {
+  console.clear();
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+module.exports = {numeroAleatorio,preguntar,mostrarMenu,mostrarTipos,clear,sleep}
