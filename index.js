@@ -28,7 +28,6 @@ async function main(){
                 let jugador = await elegirTipo(nombre)
                 console.log("Jugador añadido correctamente")
                 break;
-        
             default:
                 console.log("Ingrese una opcion valida")
                 break;
