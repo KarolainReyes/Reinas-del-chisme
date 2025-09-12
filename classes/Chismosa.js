@@ -2,7 +2,7 @@
 
 class Chismosa {
     #reputacion;
-    #nivelChisme
+    #nivelChisme;
     constructor(nombre,reputacion,nivelChisme){
         if(this.constructor === Chismosa){
             throw new Error ("Esto es una clase abstracta!")
@@ -28,4 +28,6 @@ class Chismosa {
         throw new Error("Este metodo debe implementarse desde las clases hijas");
     }
 }
+
+module.exports = Chismosa;
 
