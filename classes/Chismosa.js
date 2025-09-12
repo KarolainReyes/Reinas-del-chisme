@@ -19,6 +19,21 @@ class Chismosa {
     get nivelChisme(){
         return this.#nivelChisme;
     }
+    
+    set reputacion(valor) {
+         if (valor < 0) {
+        this.#reputacion = 0;
+    } else {
+        this.#reputacion = valor;
+    }
+    }
+    set nivelChisme(valor) {
+    if (valor < 0) {
+        this.#nivelChisme = 0;
+    } else {
+        this.#nivelChisme = valor;
+    }
+}
 
     recolectarInfo(){
         throw new Error("Este metodo debe implementarse desde las clases hijas");
@@ -30,4 +45,3 @@ class Chismosa {
 }
 
 module.exports = Chismosa;
-
