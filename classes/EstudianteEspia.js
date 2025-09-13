@@ -11,7 +11,7 @@ class EstudianteEspia extends Chismosa {
     contarChisme(){
         console.log(this.nombre,"filtra el chisme por estados de whatsapp");
         let descubierta = Math.random();
-        let nivelExtra = numeroAleatorio(1,3)+numeroAleatorio(2,3)
+        let nivelExtra = numeroAleatorio(1,2)+2
         this.nivelChisme= this.nivelChisme+nivelExtra;
         console.log("Obtiene",nivelExtra, "nivel de Chisme");
         if(descubierta<0.3){

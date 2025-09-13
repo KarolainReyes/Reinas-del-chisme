@@ -11,7 +11,7 @@ class TiaVecina extends Chismosa {
     contarChisme() {
         console.log(this.nombre, "difunde el chisme mientras ofrece café");
         let exageracion = Math.random();
-        let nivelExtra = numeroAleatorio(1, 3) + numeroAleatorio(3, 4)
+        let nivelExtra = numeroAleatorio(1,2) + 3
         this.nivelChisme = this.nivelChisme + nivelExtra;
         console.log("Obtiene", nivelExtra, "nivel de Chisme");
         if (exageracion < 0.4) {
