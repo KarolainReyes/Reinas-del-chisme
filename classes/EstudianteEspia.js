@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const Chismosa = require('./Chismosa');
 const {numeroAleatorio,sleep} = require('./functions');
 
@@ -6,20 +7,23 @@ class EstudianteEspia extends Chismosa {
         super(nombre,reputacion,nivelChisme);
     }
     recolectarInfo(){
-        console.log(this.nombre,"lee chats ajenos desde el ultimo puesto del salón");
+        console.log(chalk.blue(this.nombre),"lee chats ajenos desde el ultimo puesto del salón 🕵️‍♀️");
     }
     contarChisme(){
-        console.log(this.nombre,"filtra el chisme por estados de whatsapp");
+        console.log(chalk.blue(this.nombre),"filtra el chisme por estados de whatsapp");
         let descubierta = Math.random();
         let nivelExtra = numeroAleatorio(1,2)+2
         this.nivelChisme= this.nivelChisme+nivelExtra;
-        console.log("Obtiene",nivelExtra, "nivel de Chisme");
+        console.log("  ")
+        console.log(chalk.yellow("            🏁 Resultados: "))
+        console.log("  ")
+        console.log(chalk.green("✨ Obtiene",nivelExtra, "nivel de Chisme"));
         if(descubierta<0.3){
-            console.log("Oh no,",this.nombre,"fue descubierta")
+            console.log(chalk.yellow("Oh no,",this.nombre,"fue descubierta"));
             this.reputacion=this.reputacion-2;
-            console.log("-2 de reputacion")
+            console.log(chalk.red("-2 de reputacion 📉 "))
         }else{this.reputacion=this.reputacion+3;
-            console.log("+3 de reputacion");
+            console.log(chalk.green("+3 de reputacion 📈 "));
         }
     }
 

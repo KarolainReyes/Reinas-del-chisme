@@ -53,13 +53,18 @@ async function main() {
                 console.log(chalk.bold.gray("Preparate para competir..."));
                 await sleep(1000);
                 let nombre = await preguntar("Ingresa tu nombre: ");
-                if (nombre.length < 3) { console.log(chalk.red("Nombre demasiado corto")); sleep(1000); break; };
+                if (nombre.length < 3) { 
+                    console.log(chalk.red("Nombre demasiado corto")); 
+                    await sleep(1000); 
+                    break; 
+                };
+                nombre = chalk.cyan(nombre)
                 let jugador = await elegirTipo(nombre);
                 console.log(chalk.green("Jugador añadido correctamente"));
                 await sleep(1000);
                 clear();
                 console.log(chalk.yellow("Que inicie la competencia!!"));
-                await sleep(1000);
+                await sleep(1500);
                 await competencia();
                 break;
             case "3":
@@ -104,12 +109,14 @@ async function competencia() {
     rondas=1;
     while (rondas<3){
     for (const chismosa of chismosas) {
-        console.log("RONDA:",rondas)
-        console.log('Recolectando información del chisme...');
+        console.log(chalk.yellow("============================================="))
+        console.log(chalk.bold.yellow("                   RONDA:",rondas))
+        console.log(chalk.yellow("============================================="))
+        console.log('Recolectando información del chisme... ⏳');
         await sleep(1000);
         chismosa.recolectarInfo();
         await sleep(2000);
-        console.log(chismosa.nombre, "cuenta que", chismes[numeroAleatorio(0, 9)])
+        console.log(chalk.blue(chismosa.nombre), "cuenta que", chismes[numeroAleatorio(0, 9)] + (" 📢"))
         await sleep(2000);
         chismosa.contarChisme();
         await preguntar("Presione cualquier tecla para continuar: ")
@@ -141,6 +148,7 @@ async function competencia() {
     let resultados = await preguntar ('Estos son los resultados finales de la competencia...')
 }
 
+module.exports = {sleep};
 
 //Flujo de aplicacion
 

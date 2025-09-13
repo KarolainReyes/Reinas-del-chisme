@@ -23,9 +23,9 @@ function preguntar(pregunta) {
 }
 
 function mostrarMenu(){
-    console.log(chalk.blue("================================"));
-    console.log(chalk.blue("Bienvenido a Reinas del Chisme "));
-    console.log(chalk.blue("================================"));
+    console.log(chalk.yellow("=================================="));
+    console.log(chalk.yellow("Bienvenido a Reinas del Chisme 👑 "));
+    console.log(chalk.yellow("=================================="));
     
     const tablaMenu = [
         [chalk.blue("Opción"), chalk.blue("Descripción")],
@@ -36,24 +36,24 @@ function mostrarMenu(){
 
     const salida = table(tablaMenu,{
       border: {
-        topBody: chalk.bold.magenta("─"),
-            topJoin: chalk.bold.magenta("┬"),
-            topLeft: chalk.bold.magenta("┌"),
-            topRight: chalk.bold.magenta("┐"),
+        topBody: chalk.bold.yellow("─"),
+            topJoin: chalk.bold.yellow("┬"),
+            topLeft: chalk.bold.yellow("┌"),
+            topRight: chalk.bold.yellow("┐"),
 
-            bottomBody: chalk.bold.magenta("─"),
-            bottomJoin: chalk.bold.magenta("┴"),
-            bottomLeft: chalk.bold.magenta("└"),
-            bottomRight: chalk.bold.magenta("┘"),
+            bottomBody: chalk.bold.yellow("─"),
+            bottomJoin: chalk.bold.yellow("┴"),
+            bottomLeft: chalk.bold.yellow("└"),
+            bottomRight: chalk.bold.yellow("┘"),
 
-            bodyLeft: chalk.bold.magenta("│"),
-            bodyRight: chalk.bold.magenta("│"),
-            bodyJoin: chalk.bold.magenta("│"),
+            bodyLeft: chalk.bold.yellow("│"),
+            bodyRight: chalk.bold.yellow("│"),
+            bodyJoin: chalk.bold.yellow("│"),
 
-            joinBody: chalk.bold.magenta("─"),
-            joinLeft: chalk.bold.magenta("├"),
-            joinRight: chalk.bold.magenta("┤"),
-            joinJoin: chalk.bold.magenta("┼")
+            joinBody: chalk.bold.yellow("─"),
+            joinLeft: chalk.bold.yellow("├"),
+            joinRight: chalk.bold.yellow("┤"),
+            joinJoin: chalk.bold.yellow("┼")
       }
     });
     console.log(salida);
