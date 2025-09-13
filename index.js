@@ -45,7 +45,7 @@ async function main() {
     let salir = false;
     while (salir == false) {
         clear();
-        mostrarMenu()
+        await mostrarMenu()
         const opcion = await preguntar(chalk.gray("Ingresa una opcion: "));
         switch (opcion) {
             case "1":
@@ -132,14 +132,14 @@ async function competencia() {
         let reputacion;
         let nivelChisme;
         if (chismosa.reputacion < 5){
-            reputacion = (chismosa.reputacion)
+            reputacion = chalk.black((chismosa.reputacion))
         }else{
-            reputacion = (chismosa.reputacion)
+            reputacion = chalk.yellow((chismosa.reputacion))
         };
-        if (chismosa.nivelChisme < 5){
+        if (chismosa.nivelChisme < 8){
             nivelChisme = (chismosa.nivelChisme)
         }else{
-            nivelChisme = (chismosa.nivelChisme)
+            nivelChisme = chalk.magenta((chismosa.nivelChisme))
         };
         let chismosaResultados = [chismosa.nombre, reputacion, nivelChisme];
         tablaResultados.push(chismosaResultados)        
