@@ -33,12 +33,12 @@ function mostrarMenu(){
 }  
 
 function mostrarTipos(){
-    console.log("-----------------------------------------------------------------------");
+    console.log("---------------------------------------------------------------------------------------");
     console.log("Tipos");
-    console.log("1.Tia Vecina:        +++ Nivel de chisme, ++ Riesgo de exagerar");
-    console.log("2.Companera Curiosa:   + Nivel de chisme, +++ Reputacion");
-    console.log("3.Estudiante Espia:   ++ Nivel de chisme, ++ Riesgo de ser descubierta");
-    console.log("-----------------------------------------------------------------------");
+    console.log("1.Tia Vecina:        ★★★ Nivel de chisme,    ★ Reputacion,  ★★ Riesgo de exagerar");
+    console.log("2.Companera Curiosa:    ★ Nivel de chisme, ★★★ Reputacion,   ★ Riesgo de pasarse");
+    console.log("3.Estudiante Espia:    ★★ Nivel de chisme,  ★★ Reputacion,  ★★ Riesgo de ser descubierta");
+    console.log("--------------------------------------------------------------------------------------");
 }
 
 function clear() {
