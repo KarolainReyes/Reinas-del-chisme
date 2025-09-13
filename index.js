@@ -4,15 +4,18 @@ const TiaVecina = require('./classes/TiaVecina');
 const CompaneraCuriosa = require('./classes/CompaneraCuriosa');
 const EstudianteEspia = require('./classes/EstudianteEspia');
 const { preguntar, mostrarMenu, mostrarTipos, numeroAleatorio, sleep, clear } = require("./classes/functions");
+const { red, blue, green, black, magenta, yellow } = require('colorette');
+const { table } = require('table');
+const Chismosa = require('./classes/Chismosa');
 
 // Variables
-
+console.log('holaaa')
 const t1 = new TiaVecina("Rut", 0, 0);
 const e1 = new EstudianteEspia("Camila", 0, 0);
 const c1 = new CompaneraCuriosa("Natalia", 0, 0);
 
-let chismosas = [t1,e1,c1];
-
+let chismosas = [t1, e1, c1];
+console.log(red('holaaa1'))
 const chismes = [
     "Juan le pegó a Luna",
     "Camila le robó un carro a Juan",
@@ -39,7 +42,7 @@ const chismes = [
 // Declaracion Funciones
 
 async function main() {
-
+    
     let salir = false;
     while (salir == false) {
         clear();
@@ -51,7 +54,7 @@ async function main() {
                 let nombre = await preguntar("Ingresa tu nombre: ");
                 if (nombre.length < 3) { console.log("Nombre demasiado corto"); sleep(1000); break; };
                 let jugador = await elegirTipo(nombre);
-                console.log("Jugador añadido correctamente");
+                console.log(red("Jugador añadido correctamente"));
                 await sleep(1000);
                 clear();
                 console.log("Inician las competencias...");
@@ -74,7 +77,7 @@ async function elegirTipo(nombre) {
     while (true) {
         clear();
         mostrarTipos();
-        let tipo = await preguntar("Elije un tipo: ");
+        let tipo = await preguntar("Elije un tipo de chismosa: ");
         switch (tipo) {
             case "1":
                 let j1 = new TiaVecina(nombre, 0, 0);
@@ -101,6 +104,7 @@ async function competencia() {
     while (rondas<3){
     for (const chismosa of chismosas) {
         console.log("RONDA:",rondas)
+        console.log('Recolectando información del chisme...')
         chismosa.recolectarInfo();
         await sleep(2000);
         console.log(chismosa.nombre, "cuenta que", chismes[numeroAleatorio(0, 9)])
@@ -110,13 +114,29 @@ async function competencia() {
         clear();
         
     };rondas+=1}
-    const nivelChismeMasAlto = chismosas.reduce((max, chismosa) =>
-        chismosa.nivelChisme > max.nivelChisme ? chismosa : max);
-    const reputacionMasAlta = chismosas.reduce((max, chismosa) =>
-        chismosa.reputacion > max.reputacion ? chismosa : max);
-    console.log("Mayor nivel chisme", nivelChismeMasAlto.nombre, nivelChismeMasAlto.nivelChisme);
-    console.log("Mejor reputacion", reputacionMasAlta.nombre, reputacionMasAlta.reputacion);
-    await preguntar("asasas");
+
+    let tablaResultados = [
+        ['Nombre', 'Nivel de Chisme', 'Reputación']
+    ];
+
+    chismosas.forEach(chismosa => {
+        let reputacion;
+        let nivelChisme;
+        if (chismosa.reputacion < 5){
+            reputacion = black(chismosa.reputacion)
+        }else{
+            reputacion = yellow(chismosa.reputacion)
+        };
+        if (chismosa.nivelChisme < 5){
+            nivelChisme = (chismosa.nivelChisme)
+        }else{
+            nivelChisme = magenta(chismosa.nivelChisme)
+        };
+        let chismosaResultados = [chismosa.nombre, reputacion, nivelChisme];
+        tablaResultados.push(chismosaResultados)        
+    });
+    console.log(table(tablaResultados));
+    let xd = await preguntar ('xdddd')
 }
 
 

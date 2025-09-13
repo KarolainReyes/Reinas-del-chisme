@@ -1,0 +1,23 @@
+{
+  "name": "reinas-del-chisme",
+  "version": "1.0.0",
+  "description": "sistema de chismosas profesionales, donde cada tipo de reina del chisme recolecta información y difunde chismes con su estilo único. Se debe simular una “batalla de chismes” que determine quién logra hacer el chisme más viral.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarolainReyes/Reinas-del-chisme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarolainReyes/Reinas-del-chisme/issues"
+  },
+  "homepage": "https://github.com/KarolainReyes/Reinas-del-chisme#readme",
+  "dependencies": {
+    "colorette": "^2.0.20",
+    "table": "^6.9.0"
+  }
+}

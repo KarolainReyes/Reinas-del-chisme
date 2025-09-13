@@ -21,24 +21,25 @@ function preguntar(pregunta) {
 }
 
 function mostrarMenu(){
-    console.log("===============================");
-    console.log("Bienvenido a Reinas Del Chisme");
-    console.log("-------------------------------");
+    console.log("︵‿︵‿୨♡୧‿︵‿︵୨♡୧︵‿︵‿୨♡୧‿︵‿︵");
+    console.log("Bienvenido a Reinas del Chisme ");
+    console.log("================================");
     console.log(" ");
-    console.log("1.Competir");
-    console.log("2.Reglas");
-    console.log("3.Salir");
+    console.log("Opciones disponibles: ");
+    console.log("1. Competir");
+    console.log("2. Reglas");
+    console.log("3. Salir");
     console.log(" ");
     console.log("===============================");
 }  
 
 function mostrarTipos(){
-    console.log("---------------------------------------------------------------------------------------");
+    console.log("───────────────────────────────────────────── ⋆⋅☆⋅⋆ ─────────────────────────────────────────────");
     console.log("Tipos");
-    console.log("1.Tia Vecina:        ★★★ Nivel de chisme,    ★ Reputacion,  ★★ Riesgo de exagerar");
-    console.log("2.Companera Curiosa:    ★ Nivel de chisme, ★★★ Reputacion,   ★ Riesgo de pasarse");
-    console.log("3.Estudiante Espia:    ★★ Nivel de chisme,  ★★ Reputacion,  ★★ Riesgo de ser descubierta");
-    console.log("--------------------------------------------------------------------------------------");
+    console.log("1. Tia Vecina:          Nivel de chisme ★ ★ ★ | Reputacion ★      | Riesgo de exagerar ★ ★ ");
+    console.log("2. Companera Curiosa:   Nivel de chisme ★      | Reputacion ★ ★ ★ | Riesgo de pasarse ★ ★ ");
+    console.log("3. Estudiante Espia:    Nivel de chisme ★ ★    | Reputacion ★ ★   | Riesgo de ser descubierta ★ ★ ");
+    console.log("------------------------------------------------------------------------------------------------");
 }
 
 function clear() {
