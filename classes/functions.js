@@ -1,4 +1,6 @@
+const chalk = require('chalk');
 const readline = require("readline");
+const { table } = require('table');
 
 function numeroAleatorio (min, max){
      return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -21,24 +23,48 @@ function preguntar(pregunta) {
 }
 
 function mostrarMenu(){
-    console.log("︵‿︵‿୨♡୧‿︵‿︵୨♡୧︵‿︵‿୨♡୧‿︵‿︵");
-    console.log("Bienvenido a Reinas del Chisme ");
-    console.log("================================");
-    console.log(" ");
-    console.log("Opciones disponibles: ");
-    console.log("1. Competir");
-    console.log("2. Reglas");
-    console.log("3. Salir");
-    console.log(" ");
-    console.log("===============================");
+    console.log(chalk.blue("================================"));
+    console.log(chalk.blue("Bienvenido a Reinas del Chisme "));
+    console.log(chalk.blue("================================"));
+    
+    const tablaMenu = [
+        [chalk.blue("Opción"), chalk.blue("Descripción")],
+        [chalk.green("1"), ("Competir")],
+        [chalk.green("2"), ("Ver reglas")],
+        [chalk.green("3"), ("Salir del juego")]
+    ]
+
+    const salida = table(tablaMenu,{
+      border: {
+        topBody: chalk.bold.magenta("─"),
+            topJoin: chalk.bold.magenta("┬"),
+            topLeft: chalk.bold.magenta("┌"),
+            topRight: chalk.bold.magenta("┐"),
+
+            bottomBody: chalk.bold.magenta("─"),
+            bottomJoin: chalk.bold.magenta("┴"),
+            bottomLeft: chalk.bold.magenta("└"),
+            bottomRight: chalk.bold.magenta("┘"),
+
+            bodyLeft: chalk.bold.magenta("│"),
+            bodyRight: chalk.bold.magenta("│"),
+            bodyJoin: chalk.bold.magenta("│"),
+
+            joinBody: chalk.bold.magenta("─"),
+            joinLeft: chalk.bold.magenta("├"),
+            joinRight: chalk.bold.magenta("┤"),
+            joinJoin: chalk.bold.magenta("┼")
+      }
+    });
+    console.log(salida);
 }  
 
 function mostrarTipos(){
+    console.log(chalk.yellow("Tipos: "));
     console.log("───────────────────────────────────────────── ⋆⋅☆⋅⋆ ─────────────────────────────────────────────");
-    console.log("Tipos");
-    console.log("1. Tia Vecina:          Nivel de chisme ★ ★ ★ | Reputacion ★      | Riesgo de exagerar ★ ★ ");
-    console.log("2. Companera Curiosa:   Nivel de chisme ★      | Reputacion ★ ★ ★ | Riesgo de pasarse ★ ★ ");
-    console.log("3. Estudiante Espia:    Nivel de chisme ★ ★    | Reputacion ★ ★   | Riesgo de ser descubierta ★ ★ ");
+    console.log(chalk.blue("Tia Vecina: ") +"          Nivel de chisme: "+ chalk.yellow("★ ★ ★")+"   | Reputación: "+ chalk.yellow("★")+"      | Riesgo de exagerar: " + chalk.yellow ("★ ★"));
+    console.log(chalk.blue("Companera Curiosa: ")+"   Nivel de chisme: "+ chalk.yellow("★")+"       | Reputación: "+ chalk.yellow ("★ ★ ★")+"  | Riesgo de pasarse: " + chalk.yellow("★ ★ "));
+    console.log(chalk.blue("Estudiante Espia: " )+"    Nivel de chisme: "+ chalk.yellow("★ ★")+"     | Reputación: "+ chalk.yellow("★ ★")+"    | Riesgo de ser descubierta: " + chalk.yellow("★ ★ "));
     console.log("------------------------------------------------------------------------------------------------");
 }
 

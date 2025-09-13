@@ -4,18 +4,17 @@ const TiaVecina = require('./classes/TiaVecina');
 const CompaneraCuriosa = require('./classes/CompaneraCuriosa');
 const EstudianteEspia = require('./classes/EstudianteEspia');
 const { preguntar, mostrarMenu, mostrarTipos, numeroAleatorio, sleep, clear } = require("./classes/functions");
-const { red, blue, green, black, magenta, yellow } = require('colorette');
 const { table } = require('table');
 const Chismosa = require('./classes/Chismosa');
+const chalk = require('chalk');
+
 
 // Variables
-console.log('holaaa')
 const t1 = new TiaVecina("Rut", 0, 0);
 const e1 = new EstudianteEspia("Camila", 0, 0);
 const c1 = new CompaneraCuriosa("Natalia", 0, 0);
 
 let chismosas = [t1, e1, c1];
-console.log(red('holaaa1'))
 const chismes = [
     "Juan le pegó a Luna",
     "Camila le robó un carro a Juan",
@@ -47,25 +46,27 @@ async function main() {
     while (salir == false) {
         clear();
         mostrarMenu()
-        const opcion = await preguntar("Ingresa una opcion: ");
+        const opcion = await preguntar(chalk.gray("Ingresa una opcion: "));
         switch (opcion) {
             case "1":
                 clear();
+                console.log(chalk.bold.gray("Preparate para competir..."));
+                await sleep(1000);
                 let nombre = await preguntar("Ingresa tu nombre: ");
-                if (nombre.length < 3) { console.log("Nombre demasiado corto"); sleep(1000); break; };
+                if (nombre.length < 3) { console.log(chalk.red("Nombre demasiado corto")); sleep(1000); break; };
                 let jugador = await elegirTipo(nombre);
-                console.log(red("Jugador añadido correctamente"));
+                console.log(chalk.green("Jugador añadido correctamente"));
                 await sleep(1000);
                 clear();
-                console.log("Inician las competencias...");
+                console.log(chalk.yellow("Que inicie la competencia!!"));
                 await sleep(1000);
                 await competencia();
                 break;
             case "3":
-                console.log("Saliendo...");
+                console.log(chalk.blue("Saliendo..."));
                 return;
             default:
-                console.log("Ingrese una opcion valida")
+                console.log(chalk.red("Ingrese una opcion valida"))
                 break;
         }
 
@@ -91,7 +92,7 @@ async function elegirTipo(nombre) {
                 const j3 = new EstudianteEspia(nombre, 0, 0);
                 chismosas.push(j3);
                 return j3;
-            default: console.log("Digite un tipo correcto");
+            default: console.log(chalk.red("Digite un tipo correcto"));
                 await sleep(1500);
                 break;
         }
@@ -104,7 +105,8 @@ async function competencia() {
     while (rondas<3){
     for (const chismosa of chismosas) {
         console.log("RONDA:",rondas)
-        console.log('Recolectando información del chisme...')
+        console.log('Recolectando información del chisme...');
+        await sleep(1000);
         chismosa.recolectarInfo();
         await sleep(2000);
         console.log(chismosa.nombre, "cuenta que", chismes[numeroAleatorio(0, 9)])
@@ -123,20 +125,20 @@ async function competencia() {
         let reputacion;
         let nivelChisme;
         if (chismosa.reputacion < 5){
-            reputacion = black(chismosa.reputacion)
+            reputacion = (chismosa.reputacion)
         }else{
-            reputacion = yellow(chismosa.reputacion)
+            reputacion = (chismosa.reputacion)
         };
         if (chismosa.nivelChisme < 5){
             nivelChisme = (chismosa.nivelChisme)
         }else{
-            nivelChisme = magenta(chismosa.nivelChisme)
+            nivelChisme = (chismosa.nivelChisme)
         };
         let chismosaResultados = [chismosa.nombre, reputacion, nivelChisme];
         tablaResultados.push(chismosaResultados)        
     });
     console.log(table(tablaResultados));
-    let xd = await preguntar ('xdddd')
+    let resultados = await preguntar ('Estos son los resultados finales de la competencia...')
 }
 
 
