@@ -56,8 +56,7 @@ async function mostrarMenu(){
     const tablaMenu = [
         [chalk.blue("Opción"), chalk.blue("Descripción")],
         [chalk.green("1"), ("Competir")],
-        [chalk.green("2"), ("Ver reglas")],
-        [chalk.green("3"), ("Salir del juego")]
+        [chalk.green("2"), ("Salir del juego")]
     ]
 
     const salida = table(tablaMenu,{

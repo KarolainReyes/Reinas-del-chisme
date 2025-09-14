@@ -35,7 +35,7 @@ const chismes = [
     "Paola perdió el anillo",
     "Ricardo escondió los zapatos",
     "Valeria cambió la nota de Sofía",
-    "Mateo rompió la guitarra de Andrés"
+    chalk.magenta("Checho preñó a Any")
 ];
 
 // Declaracion Funciones
@@ -67,7 +67,7 @@ async function main() {
                 await sleep(1500);
                 await competencia();
                 break;
-            case "3":
+            case "2":
                 console.log(chalk.blue("Saliendo..."));
                 return;
             default:
